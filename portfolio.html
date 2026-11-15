@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Al-Batool Qudah | Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{--bg:#eef3f4;--tx:#0f2a33;--mu:#4d6670;--cd:#fff;--ln:#d3e0e3;--ac:#ff5a36;--a2:#0fa3a3;--a3:#5b4bdb;--tm:#0f2a33;--tt:#baf5ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--bg)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a20;--tx:#e6f3f5;--mu:#93aeb6;--cd:#12262e;--ln:#21404a;--tm:#06100d}}
+:root[data-theme="dark"]{--bg:#0b1a20;--tx:#e6f3f5;--mu:#93aeb6;--cd:#12262e;--ln:#21404a;--tm:#06100d}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+.hero{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:1;padding-top:40px;padding-bottom:40px}
+.hero h1{font-size:clamp(2.6rem,10vw,5.4rem);letter-spacing:-.03em}
+.role{font-size:clamp(1.1rem,3.6vw,1.6rem);color:var(--mu);margin:14px 0 22px;min-height:2em}
+.role b{color:var(--ac);transition:opacity .3s}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips a{color:var(--tx);text-decoration:none;border:1.5px solid var(--ln);background:var(--cd);padding:8px 14px;border-radius:99px;font-size:.92rem;transition:transform .2s,border-color .2s}
+.chips a:hover,.chips a:focus-visible{transform:translateY(-2px);border-color:var(--a2);outline:none}
+.stats{display:flex;flex-wrap:wrap;gap:28px 44px;padding:34px 0}
+.stat b{display:block;font:700 2.6rem/1 "Space Grotesk",system-ui,sans-serif;color:var(--a2)}
+.stat span{color:var(--mu);font-size:.92rem}
+section{padding:54px 0}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:8px}
+.lead{color:var(--mu);max-width:60ch;margin:0 0 26px}
+.proj{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;padding:30px 0;border-top:1.5px solid var(--ln)}
+@media(min-width:760px){.proj{grid-template-columns:1fr 1fr;gap:40px}.proj.flip .viz{order:-1}}
+.proj h3{font-size:1.6rem;margin-bottom:6px}
+.meta{color:var(--a3);font-weight:600;font-size:.92rem;margin-bottom:10px}
+.proj p{margin:0 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags i{font-style:normal;font-size:.8rem;padding:3px 10px;border-radius:6px;background:var(--cd);border:1px solid var(--ln);color:var(--mu)}
+.viz{background:var(--cd);border:1.5px solid var(--ln);border-radius:18px;padding:22px 16px;min-height:210px;display:flex;align-items:center;justify-content:center}
+.flow{display:flex;flex-direction:column;align-items:center;gap:0;width:100%}
+.node{display:flex;align-items:center;gap:12px;width:100%;max-width:260px;padding:10px 14px;border-radius:14px;background:var(--bg);border:1.5px solid var(--ln);opacity:.35;transform:scale(.96)}
+.node em{font-style:normal;font-size:1.5rem}
+.node small{display:block;color:var(--mu);font-size:.78rem;line-height:1.2}
+.arr{width:3px;height:20px;background:repeating-linear-gradient(var(--a2) 0 5px,transparent 5px 10px);background-size:3px 10px;animation:dash 0.7s linear infinite paused}
+@keyframes dash{to{background-position:0 10px}}
+.in .node{animation:lit .6s forwards}
+.in .node:nth-child(1){animation-delay:.1s}.in .node:nth-child(3){animation-delay:.8s}.in .node:nth-child(5){animation-delay:1.5s}.in .node:nth-child(7){animation-delay:2.2s}
+@keyframes lit{to{opacity:1;transform:none;border-color:var(--a2)}}
+.in .arr{animation-play-state:running}
+.hot{position:relative}
+.in .node.hot{border-color:var(--ac)}
+.in .node.hot::after{content:"";position:absolute;inset:-6px;border-radius:18px;border:2px solid var(--ac);opacity:0;animation:ping 1.8s 2.6s infinite}
+@keyframes ping{0%{opacity:.8;transform:scale(.97)}100%{opacity:0;transform:scale(1.1)}}
+.term{width:100%;background:var(--tm);color:var(--tt);font:.84rem/1.7 ui-monospace,Menlo,Consolas,monospace;border-radius:12px;padding:16px;white-space:pre-wrap;min-height:150px;margin:0}
+.term::after{content:"\258B";animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.bridge{display:flex;align-items:center;justify-content:center;gap:0;width:100%}
+.blk{padding:16px 10px;border-radius:14px;border:2px solid var(--a2);text-align:center;font-weight:600;min-width:84px}
+.blk.ot{border-color:var(--ac)}.blk small{display:block;color:var(--mu);font-weight:400;font-size:.74rem}
+.pipe{position:relative;flex:1;height:4px;background:var(--ln);min-width:50px;overflow:hidden;border-radius:4px}
+.pipe::after{content:"";position:absolute;top:0;left:-30%;width:30%;height:100%;background:linear-gradient(90deg,var(--a2),var(--ac));animation:run 1.6s linear infinite}
+@keyframes run{to{left:100%}}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.cert{perspective:700px;height:130px;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit;text-align:left}
+.cert div{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.cert.fl div{transform:rotateY(180deg)}
+.cert span{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:16px;display:flex;flex-direction:column;justify-content:center;background:var(--cd);border:1.5px solid var(--ln)}
+.cert span+span{transform:rotateY(180deg);background:var(--a2);color:#fff;border-color:var(--a2)}
+.cert b{font-family:"Space Grotesk",system-ui,sans-serif}
+.cert:focus-visible span{outline:2px solid var(--a3)}
+.sk{display:flex;flex-wrap:wrap;gap:10px}
+.sk i{font-style:normal;padding:7px 14px;border-radius:99px;background:var(--cd);border:1.5px solid var(--ln);animation:fl 4s ease-in-out infinite;transition:background .2s,color .2s}
+.sk i:hover{background:var(--a3);color:#fff}
+@keyframes fl{50%{transform:translateY(-4px)}}
+.sk i:nth-child(3n){animation-delay:-1.3s}.sk i:nth-child(3n+1){animation-delay:-2.6s}
+.edu{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.edu div{border-left:4px solid var(--a2);padding:4px 0 4px 16px}
+.edu b{display:block}.edu span{color:var(--mu);font-size:.92rem}
+footer{padding:50px 0 70px;text-align:center}
+footer h2{margin-bottom:16px}
+.rv{opacity:0;transition:opacity .7s}.rv.in{opacity:1}
+.hero .rv{opacity:1}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.node{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="wrap">
+<h1>Al-Batool<br>Adnan Qudah</h1>
+<p class="role">Computer Engineer in <b id="rw">Network Security</b></p>
+<div class="chips">
+<a href="mailto:albatooladnan0@gmail.com">albatooladnan0@gmail.com</a>
+<a href="tel:796977220">796977220</a>
+<a href="https://linkedin.com/in/albatool-adnan-9570b7331">LinkedIn</a>
+<a href="#projects">Karak, Jordan</a>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<div class="stats">
+<div class="stat rv"><b data-n="4">0</b><span>certifications</span></div>
+<div class="stat rv"><b data-n="72">0</b><span>hours of wildfire early warning</span></div>
+<div class="stat rv"><b data-n="3">0</b><span>technical roles</span></div>
+<div class="stat rv"><b data-n="94.7" data-d="1">0</b><span>% Tawjihi, scientific stream</span></div>
+</div>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="lead">Computer security and networks by training, with cloud, AI and industrial systems added along the way.</p>
+
+<article class="proj">
+<div>
+<h3>Flame Guard</h3>
+<div class="meta">Alibaba Cloud Computing &amp; AI Internship, Galaxy, Amman</div>
+<p>An AI system that predicts wildfire risk by combining satellite imagery, IoT sensors and machine learning, aiming to improve response up to 72 hours in advance.</p>
+<p>I worked on the technical design and model training, and produced the visuals and presentations that explain the workflow and its impact.</p>
+<div class="tags"><i>Machine learning</i><i>IoT</i><i>Alibaba Cloud</i><i>Data visualization</i></div>
+</div>
+<div class="viz rv"><div class="flow">
+<div class="node"><em>🛰️</em><div>Satellite imagery<small>sees the landscape</small></div></div><div class="arr"></div>
+<div class="node"><em>📡</em><div>IoT sensors<small>read the ground</small></div></div><div class="arr"></div>
+<div class="node"><em>🧠</em><div>ML model<small>scores the risk</small></div></div><div class="arr"></div>
+<div class="node hot"><em>🔥</em><div>Risk alert<small>up to 72h ahead</small></div></div>
+</div></div>
+</article>
+
+<article class="proj flip">
+<div>
+<h3>Cloud AI model deployment</h3>
+<div class="meta">Alibaba Cloud Computing &amp; AI Internship, Dec 2024 to Jun 2025</div>
+<p>Deployed and optimized AI models on Alibaba Cloud for scalable performance, and learned cloud architecture from the ground up.</p>
+<p>I gathered technical data with advanced search and Generative AI, then turned it into insights using simplified machine learning models and clear visualizations.</p>
+<div class="tags"><i>Cloud architecture</i><i>AI optimization</i><i>Generative AI</i></div>
+</div>
+<div class="viz rv"><div class="flow">
+<div class="node"><em>🗂️</em><div>Raw data<small>gathered and cleaned</small></div></div><div class="arr"></div>
+<div class="node"><em>☁️</em><div>Alibaba Cloud<small>scalable compute</small></div></div><div class="arr"></div>
+<div class="node"><em>🤖</em><div>Deployed model<small>optimized</small></div></div><div class="arr"></div>
+<div class="node hot"><em>📈</em><div>Insights<small>visualized</small></div></div>
+</div></div>
+</article>
+
+<article class="proj">
+<div>
+<h3>University network security</h3>
+<div class="meta">Computer Center, Mu’tah University, Feb to Jun 2024</div>
+<p>Configured and managed the university’s network devices and computer systems, ran vulnerability assessment and monitoring with Kali Linux, and put encryption protocols in place.</p>
+<p>Also handled data migration and secure backups, and supported hardware across departments. The Director of the Computer Center awarded me a Letter of Appreciation.</p>
+<div class="tags"><i>Kali Linux</i><i>Encryption</i><i>Backup and migration</i><i>Troubleshooting</i></div>
+</div>
+<div class="viz rv"><pre class="term" id="term" aria-label="Terminal animation of security tasks"></pre></div>
+</article>
+
+<article class="proj flip">
+<div>
+<h3>IT and industrial systems at APC</h3>
+<div class="meta">Arab Potash Company, Karak, Aug 2026 to present</div>
+<p>Deploy workstations end to end, manage APCDOM domain accounts and connectivity, and support software and driver rollouts across IT and OT environments.</p>
+<p>Hands-on with industrial automation, precision instrument calibration and Oracle E-Business Suite R12.</p>
+<div class="tags"><i>Domain management</i><i>IT/OT</i><i>Mechatronics</i><i>Oracle R12</i></div>
+</div>
+<div class="viz rv"><div class="bridge">
+<div class="blk">IT<small>workstations<br>domain</small></div><div class="pipe"></div>
+<div class="blk" style="border-style:dashed">APCDOM<small>access</small></div><div class="pipe"></div>
+<div class="blk ot">OT<small>control<br>systems</small></div>
+</div></div>
+</article>
+</section>
+
+<section>
+<h2>Certifications</h2>
+<p class="lead">Tap a card to flip it.</p>
+<div class="certs">
+<button class="cert"><div><span><b>Cloud Engineer</b>May 2025</span><span>Alibaba Cloud: designing and running cloud workloads</span></div></button>
+<button class="cert"><div><span><b>Built-in Security on Alibaba Cloud</b>Apr 2025</span><span>Security features built into the platform</span></div></button>
+<button class="cert"><div><span><b>Firewalls &amp; Attack Mitigation</b>Mar 2025, Alibaba Cloud</span><span>Protecting cloud networks from attacks</span></div></button>
+<button class="cert"><div><span><b>Network Infrastructure &amp; Technical Support</b>Jun 2024, Mu’tah University</span><span>Hands-on network support and maintenance</span></div></button>
+</div>
+</section>
+
+<section>
+<h2>Skills</h2>
+<div class="sk" style="margin-top:18px">
+<i>Penetration testing</i><i>Kali Linux</i><i>Network security</i><i>Encryption</i><i>Cisco Packet Tracer</i><i>Domain management</i><i>Alibaba Cloud</i><i>Cloud deployment</i><i>Machine learning</i><i>AI optimization</i><i>Prompt engineering</i><i>Industrial control systems</i><i>Instrumentation</i><i>Oracle EBS R12</i><i>Windows</i><i>Linux</i><i>Microsoft Office</i><i>Teamwork</i><i>Problem solving</i>
+</div>
+</section>
+
+<section>
+<h2>Education</h2>
+<div class="edu" style="margin-top:18px">
+<div><b>B.Eng. Computer Engineering, Computer Security and Networks</b><span>Mu’tah University, Jan 2024. GPA 78.58%, Very Good.</span></div>
+<div><b>Tawjihi, Scientific Stream</b><span>Al-Mazar Secondary School for Girls, Sep 2019. GPA 94.7%.</span></div>
+<div><b>Languages</b><span>Arabic (native), English (professional working proficiency)</span></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<h2>Let’s talk</h2>
+<div class="chips" style="justify-content:center">
+<a href="mailto:albatooladnan0@gmail.com">albatooladnan0@gmail.com</a>
+<a href="tel:796977220">796977220</a>
+<a href="https://linkedin.com/in/albatool-adnan-9570b7331">LinkedIn</a>
+</div>
+</div>
+</footer>
+
+<script>
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);e.target.dispatchEvent(new Event('enter'))}})},{threshold:.3});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+document.querySelectorAll('[data-n]').forEach(function(b){var el=b.parentNode;el.addEventListener('enter',function(){var t=+b.dataset.n,d=+(b.dataset.d||0);if(rm){b.textContent=t.toFixed(d);return}var s=null;(function f(ts){s=s||ts;var p=Math.min((ts-s)/1400,1);b.textContent=(t*(1-Math.pow(1-p,3))).toFixed(d);if(p<1)requestAnimationFrame(f)})(performance.now())})});
+var L=['$ assess --network --campus','[ok] devices configured, monitored','[ok] encryption protocols enabled','[ok] backup and migration verified','Letter of Appreciation received'];
+var T=document.getElementById('term'),TV=T.parentNode;
+TV.addEventListener('enter',async function(){if(rm){T.textContent=L.join('\n');return}for(var i=0;i<L.length;i++){for(var j=0;j<L[i].length;j++){T.textContent+=L[i][j];await new Promise(function(r){setTimeout(r,24)})}T.textContent+='\n';await new Promise(function(r){setTimeout(r,280)})}});
+document.querySelectorAll('.cert').forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('fl')})});
+var W=['Network Security','Cloud and AI','Penetration Testing','IT and OT Systems'],wi=0,rw=document.getElementById('rw');
+if(!rm)setInterval(function(){rw.style.opacity=0;setTimeout(function(){wi=(wi+1)%W.length;rw.textContent=W[wi];rw.style.opacity=1},300)},2600);
+var c=document.getElementById('net'),x=c.getContext('2d'),w,h,P=[];
+function rs(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;P=[];for(var i=0;i<Math.round(w*h/15000);i++)P.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,hot:Math.random()<.08})}
+function dr(){x.clearRect(0,0,w,h);for(var i=0;i<P.length;i++){var a=P[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;for(var j=i+1;j<P.length;j++){var b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){x.strokeStyle='rgba(15,163,163,'+(0.35*(1-d/120))+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}x.fillStyle=a.hot?'#ff5a36':'rgba(15,163,163,.8)';x.beginPath();x.arc(a.x,a.y,a.hot?3.5:2,0,7);x.fill()}if(!rm)requestAnimationFrame(dr)}
+rs();dr();addEventListener('resize',rs);
+</script>
+</body>
+</html>
